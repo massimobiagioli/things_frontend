@@ -14,7 +14,7 @@ jobs:
       - name: Build for production
         run: npm run build
       - name: Stop the server
-        run: pm2 stop things_frontend 2> /dev/null
+        run: pm2 stop things_frontend 2> /dev/null || true
       - name: Start the server
         run: pm2 start build/index.js --name things_frontend
       - name: Save pm2 process
