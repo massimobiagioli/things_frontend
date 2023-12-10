@@ -13,7 +13,7 @@ jobs:
         run: npm ci
       - name: Create .env from secret
         run: |
-          echo "MQTT_BROKER_HOST=${{ secrets.BACKEND_URL }}" >> .env
+          echo "BACKEND_URL=${{ secrets.BACKEND_URL }}" >> .env
       - name: Build for production
         run: npm run build
       - name: Stop the server
